@@ -1,0 +1,81 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+		class="sapUiSizeCompact"
+	height="100%">
+    <f:SimpleForm id="AddMasterDetails"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			
+			labelSpanL="4"
+			labelSpanM="4"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="2"
+			columnsM="2">
+        <f:content>
+            <ToolbarSpacer/>
+
+            <Label  text="Name" required="true"/>
+            <Input value="{ path : 'NAME', constraints : { 
+                                            minLength : 1
+                                        }}" 
+				    type="Text"  id="NAME"   name="NAME" valueStateText="Enter Role name"
+            />
+            
+            <Label  text="Description" required="true"/>
+            <Input value="{ path : 'DESCRIPTION', constraints : { 
+                                            minLength : 1
+                                        }}" 
+				    type="Text"  id="DESCRIPTION"   name="DESCRIPTION" valueStateText="Enter Role description"
+            />
+
+            
+            <Label text="Created At"  />
+            <DateTimePicker value="{
+				                    path: 'CREATED_AT',
+				                    type: 'sap.ui.model.type.DateTime'}"
+                id="CREATED_AT"  valueStateText=""   name="CREATED_AT"
+            />
+
+            <Label text="Last Updated At"  />
+            <DateTimePicker value="{
+				                    path: 'LAST_UPDATED_AT',
+				                    type: 'sap.ui.model.type.DateTime'}"
+                id="LAST_UPDATED_AT"  valueStateText=""   name="LAST_UPDATED_AT"
+            />
+
+            <Label text="Created By"  />
+            <TextArea value="{ 
+                                  path : 'CREATED_BY'
+                                   
+                              }"
+			  id="CREATED_BY"  valueStateText=""   name="CREATED_BY"
+            />
+
+            <Label text="Last Updated By"  />
+            <TextArea value="{ 
+                                  path : 'LAST_UPDATED_BY'
+                                   
+                              }"
+			  id="LAST_UPDATED_BY"  valueStateText=""   name="LAST_UPDATED_BY"
+            />
+            <Label text="Module" required="true"/>
+
+            <!--<m:MultiInput enabled="true" tokenChange="tokenUpdate" name="PROPERTY_UNIT" valueStateText="Select Users"
+                              valueHelpRequest="handleValueHelpPurchasingGroup"
+                              valueHelpOnly="true" id="USERS" value="{
+                                    path : 'TERP_MODULE/NAME',
+                                  type : 'sap.ui.model.type.String'
+                              }"
+               >
+            </m:MultiInput>-->
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

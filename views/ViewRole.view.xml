@@ -1,0 +1,77 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="app/controllers/ViewRole"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+	height="100%">
+    <m:Page title="View roles" class="sapUiContentPadding" id="floatingFooterPage" showHeader= "true" navButtonPress= "navButtonPress" showNavButton="true" >
+        <ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="false" showHeaderContent="true">
+            <headerTitle>
+                <ObjectPageHeader 
+							id="profile_image_view"
+							objectImageDensityAware="TRUE"
+							objectTitle="Role ID : {ID}"
+							  
+				/>
+            </headerTitle>
+            <headerContent>
+                <l:VerticalLayout>
+                    <l:HorizontalLayout visible="{ path: 'NAME' ,formatter: '.formatter.formatterVisible' }">
+                        <m:Label design="Bold"  text="Role name" width="150px" />
+                        <m:Text text=": {NAME}" />
+                    </l:HorizontalLayout>
+                    <l:HorizontalLayout visible="{parts:[{path:'DESCRIPTION'}],formatter: '.formatter.formatterVisible'}">
+                        <m:Label design="Bold"  text="Role Description" width="150px" />
+                        <m:Text text=": {DESCRIPTION}" width="250px"  />
+                    </l:HorizontalLayout>
+                    <l:HorizontalLayout>
+                        <m:Label design="Bold"  text="Created At" width="150px" />
+                        <m:Text  text=": {CREATED_AT}" />
+                    </l:HorizontalLayout>
+                    <l:HorizontalLayout>
+                        <m:Label design="Bold"  text="Created By" width="150px" />
+                        <m:Text  text=": {CREATED_BY}"/>
+                    </l:HorizontalLayout>
+                    <l:HorizontalLayout>
+                        <m:Label design="Bold"  text="Last Updated At" width="150px" />
+                        <m:Text  text=": {LAST_UPDATED_AT}" />
+                    </l:HorizontalLayout>
+                    <l:HorizontalLayout >
+                        <m:Label design="Bold"  text="Last Updated By" width="150px" />
+                        <m:Text  text=": {LAST_UPDATED_BY}"/>
+                    </l:HorizontalLayout>
+                </l:VerticalLayout>
+            </headerContent>
+            <sections>
+			<ObjectPageSection   title="MODULES">
+				<subSections>
+					<ObjectPageSubSection  >
+						<blocks>
+							<m:Table id="AdditionalUserDetails" inset="false" class="voucherDetails">
+                                <m:columns>   
+                                    <m:Column>
+                                        <m:Text text="Module" />
+                                    </m:Column>
+                                </m:columns>
+                            </m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+    </ObjectPageLayout>
+        <m:footer>
+            <m:Toolbar>
+                <m:ToolbarSpacer/>
+                <m:Button text="Edit" type="Accept" id="handleAllEdit" press="handleAllEdit" />
+                <m:Button text="Delete" type="Reject" id="handleAllDelete" press="handleAllDelete" />
+            </m:Toolbar>
+        </m:footer>
+    </m:Page>
+</mvc:View>

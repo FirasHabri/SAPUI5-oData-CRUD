@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+	class="sapUiSizeCompact"
+	height="100%"
+    >
+
+    <l:Grid name="idSubViews1" defaultSpan="L12 M12 S12"  width="auto">
+        <l:customData>
+            <core:CustomData key="fixturegrid" value="fixturegrid"/>
+
+        </l:customData>
+
+        <l:content>
+            <Table name="FixtureDetails"
+			 id="AdditionalDetails"
+                   inset="false" class="fixtureDetails"
+            >
+
+
+                <columns>
+                    <Column
+                    >
+                        <Text text="Header" />
+                    </Column>
+                    <Column
+                    >
+                        <Text text="Data" />
+                    </Column>
+ 					<Column
+                    >
+                        <Text text="Condition" />
+                    </Column>
+
+                    
+
+                </columns>
+
+            </Table>
+           
+        </l:content>
+    </l:Grid>
+    
+
+</core:FragmentDefinition>
+

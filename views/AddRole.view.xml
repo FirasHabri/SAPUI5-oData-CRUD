@@ -1,0 +1,59 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="app/controllers/Addrole"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+	height="100%">
+    <m:Page title="Add roles" class="sapUiContentPadding" id="floatingFooterPage" showHeader= "true" navButtonPress= "navButtonPress" showNavButton="true" >
+        <ObjectPageLayout id="ObjectPageLayout" >
+            <sections>
+                <ObjectPageSection title="Add Role">
+                    <ObjectPageSubSection
+					 mode="Expanded">
+                        <blocks>
+                            <core:Fragment   fragmentName="app/fragments/AddMasterDetailsPage" type="XML" />
+                        </blocks>
+                    </ObjectPageSubSection>
+                </ObjectPageSection>
+            </sections>
+            <sections>
+                <ObjectPageSection title="Add Module">
+                    <ObjectPageSubSection mode="Expanded">
+                        <m:Table id="tableId" width="100%" mode="Delete" delete="deleteRow">
+                            <m:headerToolbar>
+                                <m:Toolbar>
+                                    <m:ToolbarSpacer></m:ToolbarSpacer>
+                                    <m:Button icon="sap-icon://add" type="Emphasized" press="onAdd" />
+                                </m:Toolbar>
+                            </m:headerToolbar>
+                            <m:columns>
+                                <m:Column width="100%">
+                                    <m:Text text="Name" />
+                                </m:Column>
+                                <m:Column width="100%">
+                                    <m:Text text="Description" />
+                                </m:Column>
+                                <m:Column width="100%">
+                                    <m:Text text="Action" />
+                                </m:Column>
+                            </m:columns>
+                        </m:Table>
+                        
+                    </ObjectPageSubSection>
+                </ObjectPageSection>
+            </sections>
+        </ObjectPageLayout>
+        <m:footer>
+            <m:Toolbar>
+                <m:ToolbarSpacer/>
+                <m:Button text="Save" id="handleAllSave" press="handleAllSave" type="Accept" />
+            </m:Toolbar>
+        </m:footer>
+    </m:Page>
+</mvc:View>
